@@ -39,6 +39,7 @@ public class JwtSecurityConfig extends WebSecurityConfigurerAdapter {
                 .sessionManagement()
                 .sessionCreationPolicy(SessionCreationPolicy.STATELESS);
 
+        http.httpBasic();
         http.addFilterBefore(
                 new JwtLoginFilter(authenticationManager()), UsernamePasswordAuthenticationFilter.class);
         http.headers().cacheControl();
