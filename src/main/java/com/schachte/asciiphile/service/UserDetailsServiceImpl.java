@@ -19,10 +19,6 @@ public class UserDetailsServiceImpl implements UserDetailsService {
     this.applicationUserRepository = applicationUserRepository;
   }
 
-  public void save(User user) {
-    applicationUserRepository.save(user);
-  }
-
   @Override
   public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
     Optional<User> user = applicationUserRepository.findByUsername(username);

@@ -1,0 +1,10 @@
+.ascii-art {
+    font-family: monospace;
+    white-space: pre;
+    text-align: center;
+    margin-top: 5%;
+}
+
+.ascii-art button {
+    margin-right: 25px;
+}
