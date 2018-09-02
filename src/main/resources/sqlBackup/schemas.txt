@@ -1,0 +1,17 @@
+CREATE TABLE `users` (
+  `username` varchar(20) NOT NULL DEFAULT '',
+  `password` varchar(20) NOT NULL DEFAULT '',
+  `email` varchar(20) NOT NULL DEFAULT '',
+  `premium` int(1) NOT NULL DEFAULT '0',
+  `storedBytes` int(30) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`username`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+CREATE TABLE `files` (
+  `file` int(9) NOT NULL AUTO_INCREMENT,
+  `username` varchar(20) NOT NULL DEFAULT '',
+  `name` varchar(50) NOT NULL DEFAULT '',
+  `extension` varchar(5) NOT NULL DEFAULT '',
+  `directory` varchar(20) NOT NULL DEFAULT '',
+  PRIMARY KEY (`file`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;

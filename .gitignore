@@ -89,3 +89,7 @@ fabric.properties
 .idea/httpRequests
 
 src/main/resources/application.properties
+.mvn
+.mvn/*
+mvnw
+mvnw.cmd
