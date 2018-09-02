@@ -93,3 +93,5 @@ src/main/resources/application.properties
 .mvn/*
 mvnw
 mvnw.cmd
+
+src/main/java/com/schachte/asciiphile/security/SecurityConstants.java
