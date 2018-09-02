@@ -12,7 +12,4 @@ public class SecurityUtil {
 
   public static Supplier<String> userSupplier =
       () -> securityContextSupplier.get().getAuthentication().getName();
-
-  //  public static Supplier<String> passSupplier =
-  //          () -> securityContextSupplier.get().getAuthentication().getCredentials();
 }
