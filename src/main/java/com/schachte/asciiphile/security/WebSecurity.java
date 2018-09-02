@@ -50,14 +50,11 @@ public class WebSecurity extends WebSecurityConfigurerAdapter {
         .authorizeRequests()
         .antMatchers("/login")
         .permitAll()
-        .antMatchers("/phile/auth")
-        .permitAll()
         .anyRequest()
         .authenticated()
         .and()
         .addFilter(new JWTAuthenticationFilter(authenticationManager()))
-        //                .addFilter(new JWTAuthorizationFilter(authenticationManager()))
-        // this disables session creation on Spring Security
+        .addFilter(new JwtAuthorizationFilter(authenticationManager()))
         .sessionManagement()
         .sessionCreationPolicy(SessionCreationPolicy.STATELESS);
   }

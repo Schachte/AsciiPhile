@@ -7,7 +7,7 @@ import com.schachte.asciiphile.repository.FileRepo;
 import com.schachte.asciiphile.repository.UserRepo;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -17,7 +17,7 @@ public class UserDataController {
   @Autowired UserRepo userRepository;
   @Autowired FileRepo fileRepository;
 
-  @GetMapping("/files")
+  @PostMapping("/files")
   public List<File> retrieveUserDirectoryFiles() {
     return fileRepository.findByUsername(userSupplier.get());
   }
