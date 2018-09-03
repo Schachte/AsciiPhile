@@ -40,7 +40,7 @@ public class JWTAuthenticationFilter extends UsernamePasswordAuthenticationFilte
 
   @Override
   protected void successfulAuthentication(
-      HttpServletRequest req, HttpServletResponse res, FilterChain chain, Authentication auth) {
+      HttpServletRequest req, HttpServletResponse res, FilterChain chain, Authentication auth) throws IOException {
     String token =
         Jwts.builder()
             .setSubject(
@@ -50,5 +50,6 @@ public class JWTAuthenticationFilter extends UsernamePasswordAuthenticationFilte
             .signWith(SignatureAlgorithm.HS512, SECRET.getBytes())
             .compact();
     res.addHeader(HEADER_STRING, TOKEN_PREFIX + token);
+    res.getWriter().write(String.format("{\"token\" : \"%s\"}", TOKEN_PREFIX + token));
   }
 }

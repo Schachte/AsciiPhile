@@ -1,0 +1,15 @@
+.container {
+    margin: auto;
+    width: 50%;
+}
+
+.home {
+    font-family: monospace;
+    text-align: center;
+}
+
+.login {
+    margin: auto;
+    width: 100%;
+    text-align: center;
+}
