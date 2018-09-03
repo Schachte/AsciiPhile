@@ -8,6 +8,7 @@
         <link rel="stylesheet" href="styles/panel.css">
         <script src="scripts/grabFiles.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.10/lodash.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     </head>
   <body onload="loadPanel();">
       <div class="container">
@@ -20,6 +21,7 @@
 \_| |_/___/\___|_|_\_|   |_| |_|_|_|\___|
 
 - Control Panel - 
+<! -- TODO: Make this render the authenticated username -- >
 <i>Welcome back, Ryan!</i>
 </br>
 <hr>
@@ -42,12 +44,17 @@
               </div>
           </div>
           <div class="uploadPanel">
-              Drop a file here to upload
+            <form id='file-catcher'>
+              <input id='file-input' type='file' multiple/>
+              <button type='submit'>
+                Submit
+              </button>
+            </form>
+
+            <div id='file-list-display'></div>
           </div>
       </div>
-    <script>
-
-    </script>
+        <script src="scripts/fileHandler.js"></script>
   </body>
 </html>
 

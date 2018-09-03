@@ -3,7 +3,8 @@
   <head>
     <meta charset="UTF-8">
     <title>AsciiPhile - Object-Based Storage System</title>
-   <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     </head>
   <body>
       <div class="container">
@@ -15,14 +16,19 @@
 | | | \__ \ (__| | | |   | | | | | |  __/
 \_| |_/___/\___|_|_\_|   |_| |_|_|_|\___|
 
-- Secure & Scalable Object-Based Document Store - </br>
+- A Free Secure &amp; Scalable Object-Based Storage System - </br>
 - <a href="https://github.com/Schachte/AsciiPhile">Want To Contribute? Come Fork Me</a> -
           </pre>
           <div class="login">
-              <button>Login</button>
+              <button id="login">Login</button>
               <button>Register</button>
           </div>
       </div>
+    <script>
+        $( "#login" ).click(function() {
+            window.location.replace("login.html");
+        });
+    </script>
   </body>
 </html>
 
