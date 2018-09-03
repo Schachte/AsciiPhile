@@ -22,13 +22,20 @@ function grabUserFiles(userFiles) {
       acc[directory] ? acc[directory].push(name) : (acc[directory] = [name]);
       return acc;
     }, {});
+    generateFileTree(result);
 }
 
 /**
  * Generates the associated file tree based on the grouped data
  */
-function generateFileTree() {
-
+function generateFileTree(result) {
+    for (var key in result) {
+        $("#dirTree").append("<li>"+ key +"</li>");
+        result[key].forEach(function(data) {
+            $("#dirTree").append("<ul><li>"+data+"</li></ul>");
+        });
+    }
+    //$("#dirTree").append("<li>Parent Directory</li><ul><li>child1</li></ul><ul><li>child2</li></ul>");
 }
 
 
